@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+
+	<!-- <WorkshopID>1</WorkshopID> -->
+	<WorkshopID>2</WorkshopID>
+
+	<!-- <WorkshopCode>001</WorkshopCode> -->
+	<WorkshopCode>002</WorkshopCode>
+
+	<!-- <WorkshopName>加工中心001</WorkshopName> -->
+	<WorkshopName>加工中心002</WorkshopName>
+
+<!-- <EquipmentID>1</EquipmentID> -->
+<!-- <EquipmentID>2</EquipmentID> -->
+<EquipmentID>3</EquipmentID>
+<!-- <EquipmentID>4</EquipmentID> -->
+<!-- <EquipmentID>5</EquipmentID> -->
+<!-- <EquipmentID>6</EquipmentID> -->
+<!-- <EquipmentID>7</EquipmentID> -->
+<!-- <EquipmentID>8</EquipmentID> -->
+<!-- <EquipmentID>9</EquipmentID> -->
+<!-- <EquipmentID>10</EquipmentID> -->
+
+	<!-- <EquipmentCode>001</EquipmentCode> -->
+	<!-- <EquipmentCode>002</EquipmentCode> -->
+	<EquipmentCode>003</EquipmentCode>
+	<!-- <EquipmentCode>004</EquipmentCode> -->
+	<!-- <EquipmentCode>005</EquipmentCode> -->
+	<!-- <EquipmentCode>006</EquipmentCode> -->
+	<!-- <EquipmentCode>007</EquipmentCode> -->
+	<!-- <EquipmentCode>008</EquipmentCode> -->
+	<!-- <EquipmentCode>009</EquipmentCode> -->
+	<!-- <EquipmentCode>010</EquipmentCode> -->
+
+	<!-- <EquipmentName>车床001</EquipmentName> -->
+	<!-- <EquipmentName>三坐标检验机</EquipmentName> -->
+	<EquipmentName>手检的机器</EquipmentName>
+	<!-- <EquipmentName>车床004</EquipmentName> -->
+	<!-- <EquipmentName>车床005</EquipmentName> -->
+	<!-- <EquipmentName>车床006</EquipmentName> -->
+	<!-- <EquipmentName>车床007</EquipmentName> -->
+	<!-- <EquipmentName>车床008</EquipmentName> -->
+	<!-- <EquipmentName>车床009</EquipmentName> -->
+	<!-- <EquipmentName>车床010</EquipmentName> -->
+
+</Root>

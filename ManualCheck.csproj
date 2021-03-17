@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{17D5BD03-4F07-4C20-9B0D-C651CFB13F0E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ManualCheck</RootNamespace>
+    <AssemblyName>ManualCheck</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="HZH_Controls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\HZH_Controls.1.0.14\lib\net40\HZH_Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Configuration.5.0.0\lib\net461\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Configuration.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.FileExtensions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Configuration.FileExtensions.5.0.0\lib\net461\Microsoft.Extensions.Configuration.FileExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Xml, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Configuration.Xml.5.0.0\lib\net461\Microsoft.Extensions.Configuration.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.FileProviders.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Physical, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.FileProviders.Physical.5.0.0\lib\net461\Microsoft.Extensions.FileProviders.Physical.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileSystemGlobbing, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.FileSystemGlobbing.5.0.0\lib\net461\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Primitives.5.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.AppContext.4.3.0\lib\net46\System.AppContext.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Configuration.ConfigurationManager.5.0.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Diagnostics.DiagnosticSource.4.3.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Net.Http.4.3.0\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="helper\ConfigAppSettingsHelper.cs" />
+    <Compile Include="Forms\MainPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainPanel.Designer.cs">
+      <DependentUpon>MainPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="helper\Model.cs" />
+    <Compile Include="POCO\APS_ProcedureTask.cs" />
+    <Compile Include="POCO\APS_ProcedureTaskDetail.cs" />
+    <Compile Include="POCO\APS_ResLineTime.cs" />
+    <Compile Include="POCO\A_CutterDemand.cs" />
+    <Compile Include="POCO\A_KitBase.cs" />
+    <Compile Include="POCO\A_MaterialProgramDemand.cs" />
+    <Compile Include="POCO\A_OrderBase.cs" />
+    <Compile Include="POCO\A_PlanProductInfomation.cs" />
+    <Compile Include="POCO\A_ProcedureBase.cs" />
+    <Compile Include="POCO\A_ProcedureCutterConfig.cs" />
+    <Compile Include="POCO\A_ProcedureEquipmentConfig.cs" />
+    <Compile Include="POCO\A_ProcedureSelfCheckingConfig.cs" />
+    <Compile Include="POCO\A_ProcedureStaffSkillConfig.cs" />
+    <Compile Include="POCO\A_ProcessModelBase.cs" />
+    <Compile Include="POCO\A_ProcessProcedureBase.cs" />
+    <Compile Include="POCO\A_ProductBase.cs" />
+    <Compile Include="POCO\A_ProductProcedureBase.cs" />
+    <Compile Include="POCO\A_ProjectInfomation.cs" />
+    <Compile Include="POCO\A_ProjectPlanInfomation.cs" />
+    <Compile Include="POCO\A_ProjectProcessModel.cs" />
+    <Compile Include="POCO\A_WorkerTaskConfig.cs" />
+    <Compile Include="POCO\Base_BackupJob.cs" />
+    <Compile Include="POCO\Base_Button.cs" />
+    <Compile Include="POCO\Base_ButtonPermission.cs" />
+    <Compile Include="POCO\Base_CodeRule.cs" />
+    <Compile Include="POCO\Base_CodeRuleDetail.cs" />
+    <Compile Include="POCO\Base_CodeRuleSerious.cs" />
+    <Compile Include="POCO\Base_Company.cs" />
+    <Compile Include="POCO\Base_DataDictionary.cs" />
+    <Compile Include="POCO\Base_DataDictionaryDetail.cs" />
+    <Compile Include="POCO\Base_DataScopePermission.cs" />
+    <Compile Include="POCO\Base_Department.cs" />
+    <Compile Include="POCO\Base_Email.cs" />
+    <Compile Include="POCO\Base_EmailAccessory.cs" />
+    <Compile Include="POCO\Base_EmailAddressee.cs" />
+    <Compile Include="POCO\Base_EmailCategory.cs" />
+    <Compile Include="POCO\Base_Employee.cs" />
+    <Compile Include="POCO\Base_ExcelImport.cs" />
+    <Compile Include="POCO\Base_ExcelImportDetail.cs" />
+    <Compile Include="POCO\Base_FormAttribute.cs" />
+    <Compile Include="POCO\Base_FormAttributeValue.cs" />
+    <Compile Include="POCO\Base_GroupUser.cs" />
+    <Compile Include="POCO\Base_InterfaceManage.cs" />
+    <Compile Include="POCO\Base_InterfaceManageParameter.cs" />
+    <Compile Include="POCO\Base_Language.cs" />
+    <Compile Include="POCO\Base_Module.cs" />
+    <Compile Include="POCO\Base_ModulePermission.cs" />
+    <Compile Include="POCO\Base_NetworkFile.cs" />
+    <Compile Include="POCO\Base_NetworkFolder.cs" />
+    <Compile Include="POCO\Base_ObjectUserRelation.cs" />
+    <Compile Include="POCO\Base_PhoneNote.cs" />
+    <Compile Include="POCO\Base_Post.cs" />
+    <Compile Include="POCO\Base_ProvinceCity.cs" />
+    <Compile Include="POCO\Base_QueryRecord.cs" />
+    <Compile Include="POCO\Base_Roles.cs" />
+    <Compile Include="POCO\Base_Shortcuts.cs" />
+    <Compile Include="POCO\Base_Supplies.cs" />
+    <Compile Include="POCO\Base_SysLog.cs" />
+    <Compile Include="POCO\Base_SysLogDetail.cs" />
+    <Compile Include="POCO\Base_User.cs" />
+    <Compile Include="POCO\Base_View.cs" />
+    <Compile Include="POCO\Base_ViewPermission.cs" />
+    <Compile Include="POCO\Base_ViewWhere.cs" />
+    <Compile Include="POCO\Base_ViewWherePermission.cs" />
+    <Compile Include="POCO\C_BBdbR_CntlPntBase.cs" />
+    <Compile Include="POCO\C_BWuE_CntlLogicDoc.cs" />
+    <Compile Include="POCO\C_BWuE_CntlLogicPro.cs" />
+    <Compile Include="POCO\C_Calendar.cs" />
+    <Compile Include="POCO\C_CheckProcessing.cs" />
+    <Compile Include="POCO\C_CheckProcessingDocument.cs" />
+    <Compile Include="POCO\C_CheckTask.cs" />
+    <Compile Include="POCO\C_ClassRankInformation.cs" />
+    <Compile Include="POCO\C_CommingMaterial.cs" />
+    <Compile Include="POCO\C_CommingMaterialDetail.cs" />
+    <Compile Include="POCO\C_CompanyBaseInformation.cs" />
+    <Compile Include="POCO\C_DeliveryDetail.cs" />
+    <Compile Include="POCO\C_DeliveryTask.cs" />
+    <Compile Include="POCO\C_EquipmentAlarmDocument.cs" />
+    <Compile Include="POCO\C_EquipmentAlarmInfomation.cs" />
+    <Compile Include="POCO\C_EquipmentAlarmProcessing.cs" />
+    <Compile Include="POCO\C_EquipmentGroupBase.cs" />
+    <Compile Include="POCO\C_EquipmentInfomation.cs" />
+    <Compile Include="POCO\C_EquipmentStateDocument.cs" />
+    <Compile Include="POCO\C_EquipmentStateProcessing.cs" />
+    <Compile Include="POCO\C_FactoryBaseInformation.cs" />
+    <Compile Include="POCO\C_FileFloderInformation.cs" />
+    <Compile Include="POCO\C_FileInformation.cs" />
+    <Compile Include="POCO\C_InfomationPushBase.cs" />
+    <Compile Include="POCO\C_InfomationPushDocument.cs" />
+    <Compile Include="POCO\C_InfomationPushProcessing.cs" />
+    <Compile Include="POCO\C_InfomationPushStaffConfig.cs" />
+    <Compile Include="POCO\C_KitDocument.cs" />
+    <Compile Include="POCO\C_KitProcessing.cs" />
+    <Compile Include="POCO\C_LoginInDocument.cs" />
+    <Compile Include="POCO\C_LoginInProcessing.cs" />
+    <Compile Include="POCO\C_ProcedureFirstDocument.cs" />
+    <Compile Include="POCO\C_ProcedureFirstRecord.cs" />
+    <Compile Include="POCO\C_ProductDocument.cs" />
+    <Compile Include="POCO\C_ProductProcessing.cs" />
+    <Compile Include="POCO\C_ProductProcessingDocument.cs" />
+    <Compile Include="POCO\C_ProductQualityData.cs" />
+    <Compile Include="POCO\C_ReformDocument.cs" />
+    <Compile Include="POCO\C_ShiftBaseInformation.cs" />
+    <Compile Include="POCO\C_ShiftTeamConfig.cs" />
+    <Compile Include="POCO\C_StaffBaseInformation.cs" />
+    <Compile Include="POCO\C_SubmitWorktimeInfomation.cs" />
+    <Compile Include="POCO\C_TeamBaseInformation.cs" />
+    <Compile Include="POCO\C_TeamStaffConfig.cs" />
+    <Compile Include="POCO\C_TurnoverWarehouseDocument.cs" />
+    <Compile Include="POCO\C_TurnoverWarehouseProcessing.cs" />
+    <Compile Include="POCO\C_WorkshopBaseInformation.cs" />
+    <Compile Include="POCO\C__MigrationHistory.cs" />
+    <Compile Include="POCO\DataCollect.cs" />
+    <Compile Include="POCO\DefectiveProductProcessing.cs" />
+    <Compile Include="POCO\D_DEVICE_STATUS.cs" />
+    <Compile Include="POCO\PettyCash.cs" />
+    <Compile Include="POCO\POOrder.cs" />
+    <Compile Include="POCO\POOrderEntry.cs" />
+    <Compile Include="POCO\P_DEVICE_ALARM.cs" />
+    <Compile Include="POCO\P_DEVICE_STATUS.cs" />
+    <Compile Include="POCO\RS_ORGE_STRU.cs" />
+    <Compile Include="POCO\VW_LOT_BIRTHCODE.cs" />
+    <Compile Include="POCO\VW_LOT_BIRTHCODE_ASS.cs" />
+    <Compile Include="POCO\WF_FlowCCRole.cs" />
+    <Compile Include="POCO\WF_FlowLine.cs" />
+    <Compile Include="POCO\WF_FlowMain.cs" />
+    <Compile Include="POCO\WF_FlowNodeRole.cs" />
+    <Compile Include="POCO\WF_FrmAttr.cs" />
+    <Compile Include="POCO\WF_FrmDetail.cs" />
+    <Compile Include="POCO\WF_FrmMain.cs" />
+    <Compile Include="POCO\WF_FrmNodeRelation.cs" />
+    <Compile Include="POCO\WF_Instance.cs" />
+    <Compile Include="POCO\WF_NodeButtonRelation.cs" />
+    <Compile Include="POCO\WF_Task.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="helper\publicEnum.cs" />
+    <Compile Include="Forms\ScanOfflineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ScanOfflineForm.Designer.cs">
+      <DependentUpon>ScanOfflineForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ScanOnlineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ScanOnlineForm.Designer.cs">
+      <DependentUpon>ScanOnlineForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThridTitle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThridTitle.Designer.cs">
+      <DependentUpon>ThridTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserLoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserLoginForm.Designer.cs">
+      <DependentUpon>UserLoginForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\MainPanel.resx">
+      <DependentUpon>MainPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\ScanOfflineForm.resx">
+      <DependentUpon>ScanOfflineForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScanOnlineForm.resx">
+      <DependentUpon>ScanOnlineForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThridTitle.resx">
+      <DependentUpon>ThridTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserLoginForm.resx">
+      <DependentUpon>UserLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="config.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
